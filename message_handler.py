@@ -4,8 +4,8 @@ import json
 
 class MessageHandler:
     def reply(receivedEvent):
-        text=event.message.text
+        #text=event.message.text
         # if event.source.type=='user':
         #     user_status[event.source.userId]=
-        answer=text
-        return answer
+        #answer=text
+        return event.message.text
