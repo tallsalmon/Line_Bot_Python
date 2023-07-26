@@ -32,7 +32,7 @@ def handle_message(event):
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
-    print("get request body as text")
+    #print("get request body as text")
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
