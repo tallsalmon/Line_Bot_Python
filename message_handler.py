@@ -1,7 +1,8 @@
 import json
 
+user_status={}
 
 class MessageHandler:
-    def reply(receivedMessage):
-
-        return receivedMessage
+    def reply(receivedEvent):
+        text=event.message.tex
+        return answer
