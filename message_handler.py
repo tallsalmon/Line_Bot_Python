@@ -1,6 +1,6 @@
 import json
 
-user_status={}
+#user_status={}
 
 class MessageHandler:
     def reply(receivedEvent):
