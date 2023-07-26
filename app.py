@@ -19,6 +19,8 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 
+user_statuses={}
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     reply = MessageHandler.replay(event.message.text)
