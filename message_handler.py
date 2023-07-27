@@ -4,6 +4,7 @@ user_status={}
 
 class MessageHandler:
     def reply(receivedEvent):
+        print(receivedEvent)
         text=receivedEvent.message.text
         id=receivedEvent.userId
         if receivedEvent.source.type=='user':
