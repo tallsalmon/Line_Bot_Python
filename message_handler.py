@@ -5,7 +5,7 @@ user_status={}
 class MessageHandler:
     def reply(receivedEvent):
         text=receivedEvent.message.text
-        id=receivedEvent.source.userId
+        id=receivedEvent.userId
         if receivedEvent.source.type=='user':
             if id not in user_status:
                 user_status[id]=0
