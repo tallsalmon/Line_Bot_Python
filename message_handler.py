@@ -7,7 +7,7 @@ class MessageHandler:
         text=receivedEvent.message.text
         userId=receivedEvent.source.userId
         if receivedEvent.source.type=='user':
-            if receivedEvent.source.type not in user_status:
+            if userId not in user_status:
                 user_status[userId]=0
 
             if user_status[userId]==0:
