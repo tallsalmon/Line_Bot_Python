@@ -10,3 +10,4 @@ class MessageHandler:
         #answer=text
         #text='A'
         return text
+        return text
