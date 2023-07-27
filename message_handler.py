@@ -8,4 +8,4 @@ class MessageHandler:
         # if event.source.type=='user':
         #     user_status[event.source.userId]=
         #answer=text
-        return receivedEvent.message.text
+        return 'A'#receivedEvent.message.text
