@@ -6,7 +6,7 @@ class MessageHandler:
     def reply(receivedEvent):
         #print(receivedEvent)
         text=receivedEvent.message.text
-        text=str(receivedEvent.source.userId)
+        text=str(receivedEvent.source['userId'])
         
         # id=receivedEvent.source[userId]
         # if receivedEvent.source[type]=='user':
