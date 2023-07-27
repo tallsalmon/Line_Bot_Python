@@ -6,7 +6,7 @@ class MessageHandler:
     def reply(receivedEvent):
         #print(receivedEvent)
         text=receivedEvent.message.text
-        Source=json.loads(receivedEvent)
+        Source=json.load(receivedEvent)
         #text=str(receivedEvent.source['userId'])
         text=str(Source)
         
