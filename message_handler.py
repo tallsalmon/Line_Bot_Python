@@ -17,7 +17,7 @@ class MessageHandler:
         l=source.find('"',r+1)
         l=source.find('"',r+1)
         r=source.find('"',r+1)
-        type=source[l+1,r]
+        type=source[l+1:r]
         #text=id
         
         #id=receivedEvent.source[userId]
