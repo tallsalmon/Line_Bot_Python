@@ -28,7 +28,8 @@ class MessageHandler:
             if user_status[id]==0:
                 text='こんにちは。本日はイタチ判別にご協力いただき誠にありがとうございます。これからいくつか質問をさせていただきますので、できるだけ正確にお答えしていただけるようよろしくお願いいたします。'
                 user_status[id]+=1
-                
+
+        text+=str(user_status)
         #answer=text
         #text='A'
         return text
