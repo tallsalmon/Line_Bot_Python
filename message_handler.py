@@ -7,14 +7,21 @@ class MessageHandler:
         #print(receivedEvent)
         text=receivedEvent.message.text
         #text=str(receivedEvent.source['userId'])
+
+        #userIdとtypeを無理くり取得
         source=str(receivedEvent.source)
         r=source.rfind('"')
         l=source.rfind('"',0,r-1)
         id=source[l+1:r]
+        l=source.find('"')
+        l=source.find('"',r+1)
+        l=source.find('"',r+1)
+        r=source.find('"',r+1)
+        type=source[l+1,r]
         #text=id
         
         #id=receivedEvent.source[userId]
-        if receivedEvent.source[type]=='user':
+        if type=='user':
             if id not in user_status:
                 user_status[id]=0
 
