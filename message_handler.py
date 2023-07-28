@@ -29,7 +29,6 @@ class MessageHandler:
                 text='こんにちは。本日はイタチ判別にご協力いただき誠にありがとうございます。これからいくつか質問をさせていただきますので、できるだけ正確にお答えしていただけるようよろしくお願いいたします。'
                 user_status[id]+=1
 
-        text=type
         #answer=text
         #text='A'
         return text
