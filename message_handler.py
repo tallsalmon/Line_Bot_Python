@@ -8,6 +8,9 @@ class MessageHandler:
         #text=receivedEvent.message.text
         #text=str(receivedEvent.source['userId'])
         text=str(receivedEvent.source["userId"])
+        r=text.rfind('"')
+        l=text.rfind('"',0,r-1)
+        id=text[l:r+1]
         
         # id=receivedEvent.source[userId]
         # if receivedEvent.source[type]=='user':
