@@ -10,7 +10,7 @@ class MessageHandler:
         source=str(receivedEvent.source)
         r=source.rfind('"')
         l=source.rfind('"',0,r-1)
-        id=source[l:r+1]
+        id=source[l+1:r]
         text=id
         
         # id=receivedEvent.source[userId]
