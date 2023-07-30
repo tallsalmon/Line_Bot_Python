@@ -68,6 +68,7 @@ class MessageHandler:
             if user_status[id]==10:
                 text='これで質問は終わりです。イタチ判別にご協力いただきありがとうございました。'
                 user_status[id]=0
+                text+=str(user_status[id])
         #answer=text
         #text='A'
         return text
