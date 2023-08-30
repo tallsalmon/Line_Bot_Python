@@ -18,21 +18,21 @@ class MessageHandler:
     
     def reply(receivedEvent):
         
-        #print(receivedEvent)
+        # #print(receivedEvent)
         text=receivedEvent.message.text
-        # text=str(receivedEvent.source)
+        # # text=str(receivedEvent.source)
 
-        #userIdとtypeを無理くり取得
-        source=str(receivedEvent.source)
-        r=source.rfind('"')
-        l=source.rfind('"',0,r-1)
-        id=source[l+1:r]
-        l=source.find('"')
-        l=source.find('"',l+1)
-        l=source.find('"',l+1)
-        r=source.find('"',l+1)
-        type=source[l+1:r]
-        text=id
+        # #userIdとtypeを無理くり取得
+        # source=str(receivedEvent.source)
+        # r=source.rfind('"')
+        # l=source.rfind('"',0,r-1)
+        # id=source[l+1:r]
+        # l=source.find('"')
+        # l=source.find('"',l+1)
+        # l=source.find('"',l+1)
+        # r=source.find('"',l+1)
+        # type=source[l+1:r]
+        # text=id
         # text=str(receivedEvent.source)
 
  
@@ -44,7 +44,7 @@ class MessageHandler:
         # userid = t[10:-2]
 
         f = open('myfile.txt', 'w')
-        f.write(text)
+        f.write('test')
         f.close()
         # アップロードしたいファイル
         local_filepath = 'myfile.txt'
