@@ -19,6 +19,15 @@ class MessageHandler:
         r=source.find('"',l+1)
         type=source[l+1:r]
         # text=id
+        # text=str(receivedEvent.source)
+
+ 
+
+        # m = re.search(r'userId":.+', text)
+
+        # t = m.group()
+
+        # userid = t[10:-2]
         
         id=receivedEvent.source[userId]
         if type=='user':
