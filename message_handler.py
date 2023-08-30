@@ -3,6 +3,15 @@ import json
 import os
 import dropbox
 
+# Dropboxのアクセストークン
+DROPBOX_ACCESS_TOKEN = '自分で発行したアクセストークンに置き換えてください'
+
+# Dropboxのフォルダ
+# Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
+DROPBOX_ROOT = '/fujishima_weasel/'
+
+client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
+
 user_status={}
 
 class MessageHandler:
