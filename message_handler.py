@@ -6,7 +6,7 @@ class MessageHandler:
     def reply(receivedEvent):
         #print(receivedEvent)
         text=receivedEvent.message.text
-        text=str(receivedEvent.source)
+        # text=str(receivedEvent.source)
 
         #userIdとtypeを無理くり取得
         source=str(receivedEvent.source)
@@ -18,7 +18,7 @@ class MessageHandler:
         l=source.find('"',l+1)
         r=source.find('"',l+1)
         type=source[l+1:r]
-        #text=id
+        text=id
         
         #id=receivedEvent.source[userId]
         # if type=='user':
