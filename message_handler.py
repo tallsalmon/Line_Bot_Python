@@ -4,7 +4,7 @@ import os
 import dropbox
 
 # Dropboxのアクセストークン
-DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
+DROPBOX_ACCESS_TOKEN = 'sl.BlGXNqShFDGAE0S3ZXCFkH80Gj82Gtp9_wz4zTPkWTWIiZVQXAj-h7u4H1jIDQkwWtaVgLD-jaZCSB7D3qusaL3hcw7eE2F4fz0VIZAqceX9KsLvuey1962eaOas2mWYgq82uDMZ6taS'
 
 # Dropboxのフォルダ
 # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
