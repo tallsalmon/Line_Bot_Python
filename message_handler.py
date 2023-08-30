@@ -3,28 +3,28 @@ import json
 import os
 import dropbox
 
-# Dropboxのアクセストークン
-DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
+# # Dropboxのアクセストークン
+# DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
 
-# Dropboxのフォルダ
-# Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
-DROPBOX_ROOT = '/fujishima_weasel/'
+# # Dropboxのフォルダ
+# # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
+# DROPBOX_ROOT = '/fujishima_weasel/'
 
-client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
+# client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
 
 user_status={}
 
 class MessageHandler:
-    # Dropboxのアクセストークン
-    DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
-
-    # Dropboxのフォルダ
-    # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
-    DROPBOX_ROOT = '/fujishima_weasel/'
-
-    client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
     
     def reply(receivedEvent):
+        # Dropboxのアクセストークン
+        DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
+
+        # Dropboxのフォルダ
+        # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
+        DROPBOX_ROOT = '/fujishima_weasel/'
+
+        client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
         
         #print(receivedEvent)
         text=receivedEvent.message.text
