@@ -45,7 +45,7 @@ class MessageHandler:
         f.write('test')
         f.close()
         # アップロードしたいファイル
-        local_filepath = f
+        local_filepath = 'test.txt'
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
         dropbox_filepath = 'test.txt'
