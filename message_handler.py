@@ -58,7 +58,7 @@ class MessageHandler:
         local_filepath = 'test.txt'
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
-        dropbox_filepath = 'test.txt'
+        dropbox_filepath = 'test2.txt'
         print('A')
         # ファイルアップロード
         client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
