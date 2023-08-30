@@ -3,28 +3,20 @@ import json
 import os
 import dropbox
 
-# # Dropboxのアクセストークン
-# DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
+# Dropboxのアクセストークン
+DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
 
-# # Dropboxのフォルダ
-# # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
-# DROPBOX_ROOT = '/fujishima_weasel/'
+# Dropboxのフォルダ
+# Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
+DROPBOX_ROOT = '/fujishima_weasel/'
 
-# client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
+client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
 
 user_status={}
 
 class MessageHandler:
     
     def reply(receivedEvent):
-        # Dropboxのアクセストークン
-        DROPBOX_ACCESS_TOKEN = 'sl.BlEh48Y6_5zA959ML7VioG10B-xdwfHQI8ABxGon8UuKrVs7w4qK-OSWN8RK0HzpsDrpNhO1uaUMeSgJjj7555GSdwYfb3kwtZiZwvb5LWqm-eOCDz8ujnJnmGQ3_jxBTxuJwUFFNyIV'
-
-        # Dropboxのフォルダ
-        # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
-        DROPBOX_ROOT = '/fujishima_weasel/'
-
-        client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
         
         #print(receivedEvent)
         text=receivedEvent.message.text
@@ -52,17 +44,17 @@ class MessageHandler:
         # userid = t[10:-2]
 
         f = open('test.txt', 'w')
-        f.write('test')
+        f.write('test\n')
         f.close()
         # アップロードしたいファイル
         local_filepath = 'test.txt'
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
-        dropbox_filepath = 'test2.txt'
-        print('A')
+        dropbox_filepath = 'test.txt'
+        #print('A')
         # ファイルアップロード
-        #client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
-        print('B')
+        client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
+        #print('B')
         # id=receivedEvent.source[userId]
         # if type=='user':
         #     if id not in user_status:
