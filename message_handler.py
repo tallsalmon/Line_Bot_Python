@@ -108,4 +108,4 @@ class MessageHandler:
         #         text+=str(user_status[id])
         #answer=text
         #text='A'
-        return text+str(send_num)
+        return str(send_num)
