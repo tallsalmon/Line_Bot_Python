@@ -4,7 +4,7 @@ import os
 import dropbox
 
 # Dropboxのアクセストークン
-DROPBOX_ACCESS_TOKEN = 'sl.BlkmK3Kka4RlkP9HpyrKNFlg2wfOqXgmsCp0QX6wc62UEAkcnxV4Gblrw6gz5bTvjRIiNsXUD9R6ufXKk8MD1xFArIFitgj6ei1LkjY5rc3gUV0iIPnyGnVQaueyGGzoYCu1BD2zIy65'
+DROPBOX_ACCESS_TOKEN = 'sl.BmRD6Rp58gBlYV16qWEthCyMOlOzNm8AvJPIrrj2KHm0eG7DnTOc3CPmVbH1ScGDHkPy_9uBC8WKU_xp5ULK-hfv-nZoFiUIGNkNlcEGwIzRgdB25A2Ci1M4WoQWisjl9p06bguCQ9TL'
 # Dropboxのフォルダ
 # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
 DROPBOX_ROOT = '/fujishima_weasel/'
