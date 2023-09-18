@@ -48,14 +48,17 @@ class MessageHandler:
         f.write(text)
         f.close()
         # アップロードしたいファイル
-        local_filepath = 'myfile'+str(send_num)+'.txt'
+        local_filepath = 'myfile.txt'
         send_num+=1
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
-        dropbox_filepath = 'test.txt'
+        dropbox_filepath = 'test'+str(send_num)+'.txt'
         #print('A')
         # ファイルアップロード
         client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
+
+
+        
         #print('B')
         # id=receivedEvent.source[userId]
         # if type=='user':
