@@ -44,11 +44,12 @@ class MessageHandler:
 
         # userid = t[10:-2]
 
-        f = open('myfile'+str(send_num)+'.txt', 'w')
+        f = open('myfile.txt', 'w')
         f.write(text)
         f.close()
         # アップロードしたいファイル
         local_filepath = 'myfile'+str(send_num)+'.txt'
+        send_num+=1
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
         dropbox_filepath = 'test.txt'
@@ -107,4 +108,4 @@ class MessageHandler:
         #         text+=str(user_status[id])
         #answer=text
         #text='A'
-        return text
+        return text+str(send_num)
