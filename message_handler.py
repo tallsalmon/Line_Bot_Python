@@ -43,7 +43,7 @@ class MessageHandler:
         # userid = t[10:-2]
 
         f = open('myfile.txt', 'w')
-        f.write('test')
+        f.write(text)
         f.close()
         # アップロードしたいファイル
         local_filepath = 'myfile.txt'
