@@ -52,7 +52,7 @@ class MessageHandler:
         send_num+=1
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
-        dropbox_filepath = 'test'+str(send_num)+'.txt'
+        # dropbox_filepath = 'test'+str(send_num)+'.txt'
         dropbox_filepath = 'test.txt'
         #print('A')
         # ファイルアップロード
