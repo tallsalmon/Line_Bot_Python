@@ -11,6 +11,8 @@ DROPBOX_ROOT = '/fujishima_weasel/'
 
 client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
 
+send_num=0
+
 user_status={}
 
 class MessageHandler:
@@ -42,11 +44,11 @@ class MessageHandler:
 
         # userid = t[10:-2]
 
-        f = open('myfile.txt', 'w')
+        f = open('myfile'+str(send_num)+'.txt', 'w')
         f.write(text)
         f.close()
         # アップロードしたいファイル
-        local_filepath = 'myfile.txt'
+        local_filepath = 'myfile'+str(send_num)+'.txt'
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
         dropbox_filepath = 'test.txt'
