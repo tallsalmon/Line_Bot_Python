@@ -52,7 +52,7 @@ class MessageHandler:
         dropbox_filepath = 'test.txt'
         #print('A')
         # ファイルアップロード
-        client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
+        # client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
         #print('B')
         # id=receivedEvent.source[userId]
         # if type=='user':
