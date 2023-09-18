@@ -55,7 +55,7 @@ class MessageHandler:
         dropbox_filepath = 'test'+str(send_num)+'.txt'
         #print('A')
         # ファイルアップロード
-        client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
+        # client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
 
 
         
@@ -111,4 +111,4 @@ class MessageHandler:
         #         text+=str(user_status[id])
         #answer=text
         #text='A'
-        return str(send_num)
+        return dropbox_filepath
