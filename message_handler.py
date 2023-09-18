@@ -11,7 +11,7 @@ DROPBOX_ROOT = '/fujishima_weasel/'
 
 client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
 
-send_num=0
+send_num=[0]
 
 user_status={}
 
@@ -49,7 +49,7 @@ class MessageHandler:
         f.close()
         # アップロードしたいファイル
         local_filepath = 'myfile.txt'
-        send_num+=1
+        send_num[0]+=1
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
         # dropbox_filepath = 'test'+str(send_num)+'.txt'
