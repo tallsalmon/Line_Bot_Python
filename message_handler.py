@@ -34,7 +34,7 @@ class MessageHandler:
         r=source.find('"',l+1)
         type=source[l+1:r]
         text=id
-        text=str(receivedEvent.source)
+        # text=str(receivedEvent.source)
 
  
 
