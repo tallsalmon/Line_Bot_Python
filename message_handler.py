@@ -4,7 +4,7 @@ import os
 import dropbox
 
 # Dropbox(Salmonfs)のアクセストークン
-DROPBOX_ACCESS_TOKEN = 'sl.BmRD6Rp58gBlYV16qWEthCyMOlOzNm8AvJPIrrj2KHm0eG7DnTOc3CPmVbH1ScGDHkPy_9uBC8WKU_xp5ULK-hfv-nZoFiUIGNkNlcEGwIzRgdB25A2Ci1M4WoQWisjl9p06bguCQ9TL'
+DROPBOX_ACCESS_TOKEN = 'sl.BmitubrYv1ESE5vLWYOrJ7ZPHWQwAoc1sEYEd6fEFqEPOvBS0ccLKAQ_lRcuKZ-o-D-Ka3CMaoPRNeWqNLQoPmSWY0Dvq9mz8ngMtN59hzYIne3jiO2rXX9iuBQBaJXNg65KvtAotzyt'
 # Dropboxのフォルダ
 # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
 DROPBOX_ROOT = '/fujishima_weasel/'
