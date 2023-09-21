@@ -38,11 +38,11 @@ class MessageHandler:
 
  
 
-        m = re.search(r'userId":.+', text)
+        # m = re.search(r'userId":.+', text)
 
-        t = m.group()
+        # t = m.group()
 
-        userid = t[10:-2]
+        # userid = t[10:-2]
 
         f = open('myfile.txt', 'w')
         f.write(text)
