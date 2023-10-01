@@ -56,7 +56,7 @@ class MessageHandler:
 
         
         #print('B')
-        id=receivedEvent.source[userId]
+        # id=receivedEvent.source[userId]
         if type=='user':
             if id not in user_status:
                 user_status[id]=0
