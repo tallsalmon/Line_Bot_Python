@@ -14,7 +14,7 @@ send_num=[0]
 
 user_status={}
 user_answer={}#{userid:[date,place,name,talerate(尾率 はいorいいえ),whitepoint(白斑 はいorいいえ),colordif(毛色の違い はいorいいえ)]}
-itachi_point={}
+itachi_point={}#二ホンイタチの特徴に当てはまる場合+1,シベリアイタチの特徴に当てはまる場合+0　合計が2以上で二ホンイタチ
 
 class MessageHandler:
     
@@ -98,16 +98,27 @@ class MessageHandler:
                 text='鼻上中央に白斑はありますか。下の写真を例にお答えください。'
                 user_status[id]=8
                 user_answer[id].append(receivedEvent.message.text)#尾率
+                if user_answer[id][-1]=='いいえ':
+                    itachi_point[id]+=1
 
             elif user_status[id]==8:
                 text='最後に頬と後ろ足の毛色に差はありますか。下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)'
                 user_status[id]=9
                 user_answer[id].append(receivedEvent.message.text)#白斑
+                if user_answer[id][-1]=='いいえ':
+                    itachi_point[id]+=1
 
             elif user_status[id]==9:
-                text='ありがとうございます。判定結果は「〇〇イタチ」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。'
-                user_status[id]=10
                 user_answer[id].append(receivedEvent.message.text)#毛色の差
+                if user_answer[id][-1]=='はい':
+                    itachi_point[id]+=1
+
+                if itachi_point[id]>=2:
+                    result='二ホン'
+                else:
+                    result='シベリア'
+                text='ありがとうございます。判定結果は「'+result+'イタチ」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。'
+                user_status[id]=10
                 
             elif user_status[id]==10:
                 text='これで質問は終わりです。イタチ判別にご協力いただきありがとうございました。'
