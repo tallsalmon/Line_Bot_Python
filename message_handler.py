@@ -61,12 +61,12 @@ class MessageHandler:
         if type=='user':
             if id not in user_status:
                 user_status[id]=0
-                user_answer[id]=[]
-                itachi_point[id]=0
 
             if user_status[id]==0:
                 text='こんにちは。本日はイタチ判別にご協力いただき誠にありがとうございます。これからいくつか質問をさせていただきますので、できるだけ正確にお答えしていただけるようよろしくお願いいたします。'
                 user_status[id]=1
+                user_answer[id]=[]
+                itachi_point[id]=0
 
             elif user_status[id]==1:
                 text='まずは捕獲した記録を残したいので、以下の３つの質問に答えてください。'
@@ -134,7 +134,11 @@ class MessageHandler:
                 local_filepath = id+'.txt'
                 # send_num[0]+=1
                 #アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
-                dropbox_filepath = 'test'+str(user_answer[id][2])+str(user_answer[id][0])+'.txt'
+                tmpdate=''
+                for i in user_answer[id][0]:
+                    if i!='/':
+                        tmpdate+=i
+                dropbox_filepath = 'test'+str(user_answer[id][2])+tmpdate+'.txt'
                 #ファイルアップロード
                 client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
         # answer=text
