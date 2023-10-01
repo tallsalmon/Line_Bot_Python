@@ -13,6 +13,7 @@ client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
 send_num=[0]
 
 user_status={}
+user_answer={}#{userid:[date,place,name,talerate(尾率 はいorいいえ),whitepoint(白斑 はいorいいえ),colordif(毛色の違い はいorいいえ)]}
 
 class MessageHandler:
     
@@ -74,7 +75,7 @@ class MessageHandler:
                 user_status[id]=3
 
             elif user_status[id]==3:
-                text='捕獲した場所を教えて下さい。以下のようにお答えください。'
+                text='捕獲した場所を教えて下さい。以下のようにお答えください。例：福井県〇〇市〇〇町〇〇番地'
                 user_status[id]=4
 
             elif user_status[id]==4:
