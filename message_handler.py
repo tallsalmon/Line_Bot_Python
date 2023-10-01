@@ -118,6 +118,7 @@ class MessageHandler:
                     result='二ホン'
                 else:
                     result='シベリア'
+                user_anser[id].append(result+'イタチ')
                 text='ありがとうございます。判定結果は「'+result+'イタチ」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。'
                 user_status[id]=10
                 
