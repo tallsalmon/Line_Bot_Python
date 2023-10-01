@@ -119,9 +119,9 @@ class MessageHandler:
                 # アップロードしたいファイル
                 local_filepath = id+'.txt'
                 # send_num[0]+=1
-                アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
+                #アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
                 dropbox_filepath = 'test'+str(user_answer[id])+'.txt'
-                ファイルアップロード
+                #ファイルアップロード
                 client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
         # answer=text
         #text='A'
