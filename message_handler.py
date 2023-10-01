@@ -14,6 +14,7 @@ send_num=[0]
 
 user_status={}
 user_answer={}#{userid:[date,place,name,talerate(尾率 はいorいいえ),whitepoint(白斑 はいorいいえ),colordif(毛色の違い はいorいいえ)]}
+itachi_point={}
 
 class MessageHandler:
     
