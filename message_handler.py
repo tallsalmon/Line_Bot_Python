@@ -8,7 +8,6 @@ DROPBOX_ACCESS_TOKEN = 'sl.BmitubrYv1ESE5vLWYOrJ7ZPHWQwAoc1sEYEd6fEFqEPOvBS0ccLK
 # Dropboxのフォルダ
 # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
 DROPBOX_ROOT = '/fujishima_weasel/'
-
 client = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
 
 send_num=[0]
@@ -39,9 +38,7 @@ class MessageHandler:
  
 
         # m = re.search(r'userId":.+', text)
-
         # t = m.group()
-
         # userid = t[10:-2]
 
         f = open('myfile.txt', 'w')
@@ -52,11 +49,9 @@ class MessageHandler:
         send_num[0]+=1
 
         # アップロード先のファイル名（アップロードしたいファイルと同じ名前でもよい）
-        dropbox_filepath = 'test'+str(send_num[0])+'.txt'
-        # dropbox_filepath = 'test.txt'
-        #print('A')
+        # dropbox_filepath = 'test'+str(send_num[0])+'.txt'
         # ファイルアップロード
-        client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
+        # client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
 
 
         
