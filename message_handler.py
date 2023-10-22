@@ -10,7 +10,7 @@ DROPBOX_REFRESH_TOKEN = '2fl8VXXfWdsAAAAAAAAAATAUF3oa2VqnRLvWV5E0HFsEgZhnYDIg-UY
 # Dropboxのフォルダ
 # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
 DROPBOX_ROOT = '/fujishima_weasel/'
-client = dropbox.Dropbox(app key='ng3r13wmw0k35g9',app_secret='abnb48hn78crx6p',oauth2_refresh_token='2fl8VXXfWdsAAAAAAAAAATAUF3oa2VqnRLvWV5E0HFsEgZhnYDIg-UYMjcPh6oIq')
+client = dropbox.Dropbox(app_key='ng3r13wmw0k35g9',app_secret='abnb48hn78crx6p',oauth2_refresh_token='2fl8VXXfWdsAAAAAAAAAATAUF3oa2VqnRLvWV5E0HFsEgZhnYDIg-UYMjcPh6oIq')
 
 send_num=[0]
 
