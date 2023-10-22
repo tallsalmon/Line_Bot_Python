@@ -5,6 +5,8 @@ import dropbox
 
 # Dropbox(Salmonfs)のアクセストークン
 DROPBOX_ACCESS_TOKEN = 'sl.BnHRHWk2rXzCQdmN0qckxTISBxln8jxuAQw-2gllG4gjeLbgUU1D1gIavCoy0C9qXeLmm4XMKSnI3_jV1OIqJwew8c2N4fQiFwd9YASQEnDLforzgksimjxKSH0Kt9eJt6Doh6i54Ifp'
+# Dropbox(Salmonfs)のリフレッシュトークン
+DROPBOX_ACCESS_TOKEN = '2fl8VXXfWdsAAAAAAAAAATAUF3oa2VqnRLvWV5E0HFsEgZhnYDIg-UYMjcPh6oIq'
 # Dropboxのフォルダ
 # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
 DROPBOX_ROOT = '/fujishima_weasel/'
