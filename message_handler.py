@@ -103,6 +103,8 @@ class MessageHandler:
                 user_answer[id].append(receivedEvent.message.text)#尾率
                 if user_answer[id][-1]=='いいえ':
                     itachi_point[id]+=1
+                elif user_answer[id][-1]!='はい':
+                    itachi_point[id]=100
 
             elif user_status[id]==8:
                 text='最後に頬と後ろ足の毛色に差はありますか。下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)'
@@ -110,13 +112,19 @@ class MessageHandler:
                 user_answer[id].append(receivedEvent.message.text)#白斑
                 if user_answer[id][-1]=='いいえ':
                     itachi_point[id]+=1
+                elif user_answer[id][-1]!='はい':
+                    itachi_point[id]=100
 
             elif user_status[id]==9:
                 user_answer[id].append(receivedEvent.message.text)#毛色の差
                 if user_answer[id][-1]=='はい':
                     itachi_point[id]+=1
+                elif user_answer[id][-1]!='いいえ':
+                    itachi_point[id]=100
 
-                if itachi_point[id]>=2:
+                if itachi_point[id]>=100:
+                    result='不明'
+                elif itachi_point[id]>=2:
                     result='二ホン'
                 else:
                     result='シベリア'
