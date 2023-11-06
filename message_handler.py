@@ -176,5 +176,7 @@ class MessageHandler:
 
         message_id=receivedEvent.message.id
         content = line_bot_api.get_message_content(message_id)
+        #ファイルアップロード
+        client.files_upload(open(filename, "rb").read(), os.path.join(DROPBOX_ROOT, filename))
 
                
