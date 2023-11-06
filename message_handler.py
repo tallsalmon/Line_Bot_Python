@@ -10,6 +10,7 @@ DROPBOX_REFRESH_TOKEN=os.getenv('CHANNEL_REFRESH_TOKEN')
 # Dropboxのフォルダ
 # Dropboxのルートにこの名前のフォルダを事前に作っておく必要がある
 DROPBOX_ROOT = '/fujishima_weasel/'
+DROPBOX_IMAGE_ROOT='/fujishima_image/'
 client = dropbox.Dropbox(app_key='ng3r13wmw0k35g9',app_secret='abnb48hn78crx6p',oauth2_refresh_token='2fl8VXXfWdsAAAAAAAAAATAUF3oa2VqnRLvWV5E0HFsEgZhnYDIg-UYMjcPh6oIq')
 
 send_num=[0]
@@ -17,6 +18,7 @@ send_num=[0]
 user_status={}
 user_answer={}#{userid:[date,place,name,talerate(尾率 はいorいいえ),whitepoint(白斑 はいorいいえ),colordif(毛色の違い はいorいいえ)]}
 itachi_point={}#二ホンイタチの特徴に当てはまる場合+1,シベリアイタチの特徴に当てはまる場合+0　合計が2以上で二ホンイタチ
+user_image={}#写真を上げてくれた枚数（イタチの画像の名前に使用）
 
 class MessageHandler:
     
@@ -156,4 +158,20 @@ class MessageHandler:
         return text
 
     def getimage(receivedEvent):
-        
+        #userIdとtypeを無理くり取得
+        source=str(receivedEvent.source)
+        r=source.rfind('"')
+        l=source.rfind('"',0,r-1)
+        id=source[l+1:r]
+        if id not in user_image:
+            user_image[id]=0
+        user_image[id]+=1
+        if len(user_answer[id])>=3:
+            filename=user_answer[id][2]+str(user_image[id])
+        else:
+            filename=str(id)+'さん'+str(user_image[id])
+
+        message_id=receivedEvent.message.id
+        content = line_bot_api.get_message_content(message_id)
+
+               
