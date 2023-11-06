@@ -31,6 +31,9 @@ def handle_message(event):
     #         event.reply_token,
     #         TextSendMessage(text=reply))
 
+@handler.add(MessageEvent,message=ImageMessage)
+def handle_image(event):
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
