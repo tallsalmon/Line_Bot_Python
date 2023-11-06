@@ -154,3 +154,6 @@ class MessageHandler:
         # answer=text
         #text='A'
         return text
+
+    def getimage(receivedEvent):
+        
