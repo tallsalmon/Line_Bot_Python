@@ -125,11 +125,11 @@ class MessageHandler:
                 if itachi_point[id]>=100:
                     result='不明'
                 elif itachi_point[id]>=2:
-                    result='二ホン'
+                    result='二ホンイタチ'
                 else:
-                    result='シベリア'
+                    result='シベリアイタチ'
                 user_answer[id].append(result+'イタチ')
-                text='ありがとうございます。判定結果は「'+result+'イタチ」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。'
+                text='ありがとうございます。判定結果は「'+result+'」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。'
                 user_status[id]=10
                 
             elif user_status[id]==10:
