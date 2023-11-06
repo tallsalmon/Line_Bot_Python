@@ -35,7 +35,7 @@ def handle_message(event):
 
 @handler.add(MessageEvent,message=ImageMessage)
 def handle_image(event):
-    getimage(event)
+    MessageHandler.getimage(event)
 
 
 @app.route("/callback", methods=['POST'])
