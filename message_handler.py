@@ -181,6 +181,7 @@ class MessageHandler:
         f_tmp = open(filename+'.jpg', 'w')
         # f_tmp.write(str(user_answer[id]))
         f_tmp.close()
+        print(content)
         #ファイルアップロード
         client.files_save_url('/image/'+filename+'.jpg',content)
         # client.files_upload(, os.path.join(DROPBOX_IMAGE_ROOT, filename+'jpg'))
