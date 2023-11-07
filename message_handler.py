@@ -106,17 +106,19 @@ class MessageHandler:
                 text='次に捕獲したイタチの状態について以下の３つの質問に答えてください。'
                 user_status[id]=6
                 user_answer[id].append(receivedEvent.message.text)#名前
-                send_mode[id]=2
+                send_mode[id]=1
 
             elif user_status[id]==6:
                 text='まず、尾率が５０％以上かどうか教えて下さい。尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。'
                 user_status[id]=7
                 send_mode[id]=2
+                notes=makenotes(6)
 
             elif user_status[id]==7:
                 text='鼻上中央に白斑はありますか。下の写真を例にお答えください。'
                 user_status[id]=8
                 send_mode[id]=2
+                notes=makenotes(7)
                 user_answer[id].append(receivedEvent.message.text)#尾率
                 if user_answer[id][-1]=='いいえ':
                     itachi_point[id]+=1
@@ -126,7 +128,8 @@ class MessageHandler:
             elif user_status[id]==8:
                 text='最後に頬と後ろ足の毛色に差はありますか。下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)'
                 user_status[id]=9
-                send_mode[id]=1
+                send_mode[id]=2
+                notes=makenotes(8)
                 user_answer[id].append(receivedEvent.message.text)#白斑
                 if user_answer[id][-1]=='いいえ':
                     itachi_point[id]+=1
@@ -173,8 +176,13 @@ class MessageHandler:
                 client.files_upload(open(local_filepath, "rb").read(), os.path.join(DROPBOX_ROOT, dropbox_filepath))
         # answer=text
         #text='A'
-        return send_mode[id],text
+        return send_mode[id],text,notes
 
+    def maketotes(status):
+        if status==6:
+        elif status==7:
+        elif status==8:
+    
     def getimage(receivedEvent):
         #userIdとtypeを無理くり取得
         source=str(receivedEvent.source)
