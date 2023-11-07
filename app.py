@@ -14,8 +14,8 @@ from linebot.models import (
 
 from message_handler import MessageHandler
 
-app = Flask(__name__)
-app = Flask(__name__, static_folder=“./static”)
+# app = Flask(__name__)
+app = Flask(__name__, static_folder="./static")
 
 
 line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
