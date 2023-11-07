@@ -35,6 +35,13 @@ def handle_message(event):
 
 @handler.add(MessageEvent,message=ImageMessage)
 def handle_image(event):
+    
+    message_id=receivedEvent.message.id
+    content = line_bot_api.get_message_content(message_id)
+    line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=str(content)))
+    
     MessageHandler.getimage(event)
 
 
