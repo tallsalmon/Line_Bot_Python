@@ -183,7 +183,7 @@ class MessageHandler:
         f_tmp.close()
         print(content)
         #ファイルアップロード
-        client.files_save_url('/image/'+filename+'.jpg',content)
+        client.files_save_url('/fujishima_image/'+filename+'.jpg',content)
         # client.files_upload(, os.path.join(DROPBOX_IMAGE_ROOT, filename+'jpg'))
         # with open(DROPBOX_IMAGE_ROOT+filename+".jpg", "wb") as f:
             # for c in content.iter_content():
