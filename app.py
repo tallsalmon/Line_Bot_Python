@@ -25,10 +25,11 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    reply = MessageHandler.reply(event)
-    line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=reply))
+    sendmode,reply = MessageHandler.reply(event)
+    if sendmode==1:
+        line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=reply))
     # line_bot_api.reply_message(
     #         event.reply_token,
     #         TextSendMessage(text=reply))
@@ -36,11 +37,11 @@ def handle_message(event):
 @handler.add(MessageEvent,message=ImageMessage)
 def handle_image(event):
     
-    message_id=event.message.id
-    content = line_bot_api.get_message_content(message_id)
-    line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=str(content)))
+    # message_id=event.message.id
+    # content = line_bot_api.get_message_content(message_id)
+    # line_bot_api.reply_message(
+    #         event.reply_token,
+    #         TextSendMessage(text=str(content)))
     
     MessageHandler.getimage(event)
 
