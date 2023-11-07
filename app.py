@@ -33,7 +33,24 @@ def handle_message(event):
     elif sendmode==2:
         messages = TemplateSendMessage(
             alt_text='template',
-            template=CarouselTemplate(columns=notes),
+            template=ButtonsTemplate(
+                text='尾率は50%以上？',
+                title='質問1',
+                image_size="cover",
+                thumbnail_image_url="https://任意の画像URL.jpg",
+                actions=[
+                    MESSAGEAction(
+                        type='message',
+                        label='Yes',
+                        text='Yes'
+                    ),
+                    MESSAGEAction(
+                        type='message',
+                        label='No',
+                        text='No'
+                    )
+                ]
+            ),
         )
         line_bot_api.reply_message(event.reply_token, messages=messages)
     # line_bot_api.reply_message(
