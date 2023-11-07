@@ -25,11 +25,17 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    sendmode,reply = MessageHandler.reply(event)
+    sendmode,reply,notes = MessageHandler.reply(event)
     if sendmode==1:
         line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(text=reply))
+    elif sendmode==2:
+        messages = TemplateSendMessage(
+            alt_text='template',
+            template=CarouselTemplate(columns=notes),
+        )
+        line_bot_api.reply_message(event.reply_token, messages=messages)
     # line_bot_api.reply_message(
     #         event.reply_token,
     #         TextSendMessage(text=reply))
