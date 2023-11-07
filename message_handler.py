@@ -178,8 +178,11 @@ class MessageHandler:
 
         message_id=receivedEvent.message.id
         content = line_bot_api.get_message_content(message_id)
+        f_tmp = open(filename+'.jpg', 'w')
+        # f_tmp.write(str(user_answer[id]))
+        f_tmp.close()
         #ファイルアップロード
-        client.files_upload(open(filename, "wb").read(), os.path.join(DROPBOX_IMAGE_ROOT, filename))
+        client.files_upload(open(filename+'jpg', "wb").read(), os.path.join(DROPBOX_IMAGE_ROOT, filename+'jpg'))
         with open(DROPBOX_IMAGE_ROOT+filename+".jpg", "wb") as f:
             for c in content.iter_content():
                 f.write(c)
