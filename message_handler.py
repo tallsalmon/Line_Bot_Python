@@ -169,7 +169,7 @@ class MessageHandler:
         if id not in user_image:
             user_image[id]=0
         user_image[id]+=1
-        if len(user_answer[id])>=3:
+        if id in user_answer and len(user_answer[id])>=3:
             filename=user_answer[id][2]+str(user_image[id])
         else:
             filename=str(id)+'さん'+str(user_image[id])
