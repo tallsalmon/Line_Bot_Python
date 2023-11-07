@@ -182,7 +182,7 @@ class MessageHandler:
         # f_tmp.write(str(user_answer[id]))
         f_tmp.close()
         #ファイルアップロード
-        client.files_upload(open(filename+'jpg', "wb"), os.path.join(DROPBOX_IMAGE_ROOT, filename+'jpg'))
+        client.files_upload('', os.path.join(DROPBOX_IMAGE_ROOT, filename+'jpg'))
         with open(DROPBOX_IMAGE_ROOT+filename+".jpg", "wb") as f:
             for c in content.iter_content():
                 f.write(c)
