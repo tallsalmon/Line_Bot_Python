@@ -179,7 +179,7 @@ class MessageHandler:
         message_id=receivedEvent.message.id
         content = line_bot_api.get_message_content(message_id)
         #ファイルアップロード
-        client.files_upload(open(filename, "rb").read(), os.path.join(DROPBOX_IMAGE_ROOT, filename))
+        client.files_upload(open(filename, "wb").read(), os.path.join(DROPBOX_IMAGE_ROOT, filename))
         with open(DROPBOX_IMAGE_ROOT+filename+".jpg", "wb") as f:
             for c in content.iter_content():
                 f.write(c)
