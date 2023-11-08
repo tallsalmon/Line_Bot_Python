@@ -91,7 +91,7 @@ def on_postback(event):
     if sendmode==1:
         line_bot_api.reply_message(
                 event.reply_token,
-                [TextSendMessage(text=date), TextSendMessage(text=reply)]
+                [TextSendMessage(text=type(date)), TextSendMessage(text=reply)]
         )
 
 @handler.add(MessageEvent,message=ImageMessage)
