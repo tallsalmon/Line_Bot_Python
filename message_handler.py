@@ -60,6 +60,20 @@ class MessageHandler:
                 '日付を入力'
             ]
         return notes
+
+    def AskPlace(receivedEvent):
+        source=str(receivedEvent.source)
+        r=source.rfind('"')
+        l=source.rfind('"',0,r-1)
+        id=source[l+1:r]
+
+        if type=='user':
+            if user_status[id]==3:
+                text='捕獲した場所を教えて下さい。以下のようにお答えください。例：福井県〇〇市〇〇町〇〇番地'
+                user_status[id]=4
+                user_answer[id].append(receivedEvent.message.text)#日時の記録
+                send_mode[id]=1
+        return send_mode[id],text,notes
     
     
     def reply(receivedEvent):
