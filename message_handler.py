@@ -176,10 +176,12 @@ class MessageHandler:
                 send_mode[id]=2
                 notes=MessageHandler.makenotes(7)
                 user_answer[id].append(receivedEvent.message.text)#尾率
-                if user_answer[id][-1]=='いいえ':
+                if user_answer[id][-1]=='いいえ(50%未満)':
                     itachi_point[id]+=1
-                elif user_answer[id][-1]!='はい':
-                    itachi_point[id]=100
+                elif user_answer[id][-1]!='はい(50%以上)':
+                    itachi_point[id]=0
+                else:
+                    itachi_point[id]
 
             elif receivedEvent.message.text=='はい(白斑あり)' or receivedEvent.message.text=='いいえ(白斑なし)':
                 text='最後に頬と後ろ足の毛色に差はありますか。下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)'
@@ -187,17 +189,21 @@ class MessageHandler:
                 send_mode[id]=2
                 notes=MessageHandler.makenotes(8)
                 user_answer[id].append(receivedEvent.message.text)#白斑
-                if user_answer[id][-1]=='いいえ':
+                if user_answer[id][-1]=='いいえ(白斑なし)':
                     itachi_point[id]+=1
-                elif user_answer[id][-1]!='はい':
+                elif user_answer[id][-1]!='はい(白斑あり)':
+                    itachi_point[id]=0
+                else:
                     itachi_point[id]=100
 
             elif receivedEvent.message.text=='はい(色差あり)' or receivedEvent.message.text=='いいえ(色差なし)':
                 send_mode[id]=1
                 user_answer[id].append(receivedEvent.message.text)#毛色の差
-                if user_answer[id][-1]=='はい':
+                if user_answer[id][-1]=='はい(色差あり)':
                     itachi_point[id]+=1
-                elif user_answer[id][-1]!='いいえ':
+                elif user_answer[id][-1]!='いいえ(色差なし)':
+                    itachi_point[id]=0
+                else:
                     itachi_point[id]=100
 
                 if itachi_point[id]>=100:
