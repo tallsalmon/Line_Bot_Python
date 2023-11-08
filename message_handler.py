@@ -53,6 +53,12 @@ class MessageHandler:
                 'はい(色差あり)',
                 'いいえ(色差なし)'
             ]
+        elif status==2:
+            notes=[
+                '',
+                '捕獲した日時はいつですか？',
+                '日付を入力'
+            ]
         return notes
     
     
@@ -116,7 +122,8 @@ class MessageHandler:
             elif user_status[id]==2:
                 text='捕獲した日時はいつですか?'
                 user_status[id]=3
-                send_mode[id]=1
+                send_mode[id]=3
+                notes=MessageHandler.makenotes(2)
 
             elif user_status[id]==3:
                 text='捕獲した場所を教えて下さい。以下のようにお答えください。例：福井県〇〇市〇〇町〇〇番地'
