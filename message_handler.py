@@ -170,7 +170,7 @@ class MessageHandler:
                 send_mode[id]=2
                 notes=MessageHandler.makenotes(6)
 
-            elif user_status[id]==7:
+            elif receivedEvent.message.text=='はい(50%以上)' or receivedEvent.message.text=='いいえ(50%未満)':
                 text='鼻上中央に白斑はありますか。下の写真を例にお答えください。'
                 user_status[id]=8
                 send_mode[id]=2
@@ -181,7 +181,7 @@ class MessageHandler:
                 elif user_answer[id][-1]!='はい':
                     itachi_point[id]=100
 
-            elif user_status[id]==8:
+            elif receivedEvent.message.text=='はい(白斑あり)' or receivedEvent.message.text=='いいえ(白斑なし)':
                 text='最後に頬と後ろ足の毛色に差はありますか。下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)'
                 user_status[id]=9
                 send_mode[id]=2
@@ -192,7 +192,7 @@ class MessageHandler:
                 elif user_answer[id][-1]!='はい':
                     itachi_point[id]=100
 
-            elif user_status[id]==9:
+            elif receivedEvent.message.text=='はい(色差あり)' or receivedEvent.message.text=='いいえ(色差なし)':
                 send_mode[id]=1
                 user_answer[id].append(receivedEvent.message.text)#毛色の差
                 if user_answer[id][-1]=='はい':
@@ -208,7 +208,7 @@ class MessageHandler:
                     result='シベリアイタチ'
                 user_answer[id].append(result)
                 user_answer[id].append(str(id))
-                text='ありがとうございます。判定結果は「'+result+'」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。'
+                text='ありがとうございます。判定結果は「'+result+'」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。写真の送信が完了しましたら「完了」と送信してください。'
                 user_status[id]=10
                 
             elif user_status[id]==10:
