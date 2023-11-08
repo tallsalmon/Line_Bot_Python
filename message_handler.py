@@ -27,6 +27,34 @@ user_image={}#写真を上げてくれた枚数（イタチの画像の名前に
 send_mode={}#ユーザーに送るメッセージの種類を決定（1のときテキストメッセージ、2のときテンプレートメッセージ）
 
 class MessageHandler:
+
+    def makenotes(status):
+        if status==6:
+            notes=[
+                '尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。',
+                '尾率が５０％以上かどうか教えて下さい。',
+                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E5%B0%BE%E7%8E%87%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E5%86%99%E7%9C%9F%EF%BC%88%E5%85%AC%E5%BC%8F%E3%81%82%E3%82%8A%EF%BC%89.jpg',
+                'はい(50%以上)',
+                'いいえ(50%未満)'
+            ]
+        elif status==7:
+            notes=[
+                '下の写真を例にお答えください。',
+                '鼻上中央に白斑はありますか。',
+                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E9%BC%BB%E4%B8%AD%E5%A4%AE%E5%88%A4%E5%88%A5%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg',
+                'はい(白斑あり)',
+                'いいえ(白斑なし)'
+            ]
+        elif status==8:
+            notes=[
+                '下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)',
+                '最後に頬と後ろ足の毛色に差はありますか。',
+                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E8%89%B2%E5%B7%AE%E3%81%82%E3%82%8A%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg',
+                'はい(色差あり)',
+                'いいえ(色差なし)'
+            ]
+        return notes
+    
     
     def reply(receivedEvent):
         
@@ -178,32 +206,6 @@ class MessageHandler:
         #text='A'
         return send_mode[id],text,notes
 
-    def makenotes(status):
-        if status==6:
-            notes=[
-                '尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。',
-                '尾率が５０％以上かどうか教えて下さい。',
-                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E5%B0%BE%E7%8E%87%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E5%86%99%E7%9C%9F%EF%BC%88%E5%85%AC%E5%BC%8F%E3%81%82%E3%82%8A%EF%BC%89.jpg',
-                'はい(50%以上)',
-                'いいえ(50%未満)'
-            ]
-        elif status==7:
-            notes=[
-                '下の写真を例にお答えください。',
-                '鼻上中央に白斑はありますか。',
-                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E9%BC%BB%E4%B8%AD%E5%A4%AE%E5%88%A4%E5%88%A5%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg',
-                'はい(白斑あり)',
-                'いいえ(白斑なし)'
-            ]
-        elif status==8:
-            notes=[
-                '下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)',
-                '最後に頬と後ろ足の毛色に差はありますか。',
-                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E8%89%B2%E5%B7%AE%E3%81%82%E3%82%8A%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg',
-                'はい(色差あり)',
-                'いいえ(色差なし)'
-            ]
-        return notes
     
     def getimage(receivedEvent):
         #userIdとtypeを無理くり取得
