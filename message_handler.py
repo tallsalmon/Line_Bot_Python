@@ -140,13 +140,13 @@ class MessageHandler:
                 text='まず、尾率が５０％以上かどうか教えて下さい。尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。'
                 user_status[id]=7
                 send_mode[id]=2
-                notes=makenotes(6)
+                notes=MessageHandler.makenotes(6)
 
             elif user_status[id]==7:
                 text='鼻上中央に白斑はありますか。下の写真を例にお答えください。'
                 user_status[id]=8
                 send_mode[id]=2
-                notes=makenotes(7)
+                notes=MessageHandler.makenotes(7)
                 user_answer[id].append(receivedEvent.message.text)#尾率
                 if user_answer[id][-1]=='いいえ':
                     itachi_point[id]+=1
@@ -157,7 +157,7 @@ class MessageHandler:
                 text='最後に頬と後ろ足の毛色に差はありますか。下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)'
                 user_status[id]=9
                 send_mode[id]=2
-                notes=makenotes(8)
+                notes=MessageHandler.makenotes(8)
                 user_answer[id].append(receivedEvent.message.text)#白斑
                 if user_answer[id][-1]=='いいえ':
                     itachi_point[id]+=1
