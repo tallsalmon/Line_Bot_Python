@@ -55,9 +55,9 @@ class MessageHandler:
             ]
         elif status==2:
             notes=[
-                '',
+                '　',
                 '捕獲した日時はいつですか？',
-                '日付を入力'
+                '日時を入力'
             ]
         return notes
 
