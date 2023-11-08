@@ -48,7 +48,7 @@ class MessageHandler:
         # text=str(receivedEvent.source)
 
  
-
+        notes=[]
         # m = re.search(r'userId":.+', text)
         # t = m.group()
         # userid = t[10:-2]
