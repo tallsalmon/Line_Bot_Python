@@ -185,7 +185,8 @@ class MessageHandler:
                     result='二ホンイタチ'
                 else:
                     result='シベリアイタチ'
-                user_answer[id].append(result+'イタチ')
+                user_answer[id].append(result)
+                user_answer[id].append(str(id))
                 text='ありがとうございます。判定結果は「'+result+'」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。'
                 user_status[id]=10
                 
