@@ -11,7 +11,8 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
     ImageMessage,ImageSendMessage,TemplateSendMessage,
-    ButtonsTemplate,MessageAction,DatetimePickerAction
+    ButtonsTemplate,MessageAction,DatetimePickerAction,
+    PostbackEvent
 )
 
 from message_handler import MessageHandler
