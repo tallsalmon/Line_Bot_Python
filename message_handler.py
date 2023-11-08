@@ -33,7 +33,7 @@ class MessageHandler:
             notes=[
                 '尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。',
                 '尾率が５０％以上かどうか教えて下さい。',
-                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/birituwithsamplewith.jpg',
+                'https://raw.githubusercontent.com/tallsalmon/Line_Bot_Python/main/static/birituwithsamplewith.jpg',
                 'はい(50%以上)',
                 'いいえ(50%未満)'
             ]
@@ -41,7 +41,7 @@ class MessageHandler:
             notes=[
                 '下の写真を例にお答えください。',
                 '鼻上中央に白斑はありますか。',
-                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E9%BC%BB%E4%B8%AD%E5%A4%AE%E5%88%A4%E5%88%A5%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg',
+                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E9%BC%BB%E4%B8%AD%E5%A4%AE%E5%88%A4%E5%88%A5%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg?raw=true',
                 'はい(白斑あり)',
                 'いいえ(白斑なし)'
             ]
@@ -49,7 +49,7 @@ class MessageHandler:
             notes=[
                 '下の写真を例にお答えください。 (無ければシベリアイタチ/有ればニホンイタチ)',
                 '最後に頬と後ろ足の毛色に差はありますか。',
-                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E8%89%B2%E5%B7%AE%E3%81%82%E3%82%8A%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg',
+                'https://github.com/tallsalmon/Line_Bot_Python/blob/main/static/%E8%89%B2%E5%B7%AE%E3%81%82%E3%82%8A%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB.jpg?raw=true',
                 'はい(色差あり)',
                 'いいえ(色差なし)'
             ]
