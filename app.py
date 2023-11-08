@@ -9,7 +9,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,ImageMessage,ImageSendMessage,TemplateSendMessage,ButtonsTemplate,MESSAGEAction
+    MessageEvent, TextMessage, TextSendMessage,ImageMessage,ImageSendMessage,TemplateSendMessage,ButtonsTemplate,MessageAction
 )
 
 from message_handler import MessageHandler
@@ -39,12 +39,12 @@ def handle_message(event):
                 image_size="cover",
                 thumbnail_image_url=notes[2],
                 actions=[
-                    MESSAGEAction(
+                    MessageAction(
                         type='message',
                         label=notes[3],
                         text=notes[3]
                     ),
-                    MESSAGEAction(
+                    MessageAction(
                         type='message',
                         label=notes[4],
                         text=notes[4]
