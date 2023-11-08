@@ -203,6 +203,7 @@ class MessageHandler:
                 'はい(色差あり)',
                 'いいえ(色差なし)'
             ]
+        return notes
     
     def getimage(receivedEvent):
         #userIdとtypeを無理くり取得
