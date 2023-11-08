@@ -83,8 +83,10 @@ def handle_message(event):
 @handler.add(PostbackEvent)
 def on_postback(event):
     date = str(event.postback.params['datetime'])
+    date.replace('-','年',1)
+    date.replace('-','月',1)
     date.replace('T','日')
-    date+='時'
+    date+='時ですね。'
     sendmode,reply,notes = MessageHandler.AskPlace(event,date)
     if sendmode==1:
         line_bot_api.reply_message(
