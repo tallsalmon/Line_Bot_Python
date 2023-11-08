@@ -79,8 +79,8 @@ class MessageHandler:
                 user_status[id]=4
                 user_answer[id].append(str(Date))#日時の記録
                 send_mode[id]=1
-        # return send_mode[id],text,notes
-        return 1,text,notes
+        return send_mode[id],text,notes
+        # return 1,text,notes
     
     
     def reply(receivedEvent):
