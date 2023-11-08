@@ -83,12 +83,16 @@ def handle_message(event):
 @handler.add(PostbackEvent)
 def on_postback(event):
     date = event.postback.params['datetime']
+    date.replace('T','日')
+    date+='時'
     sendmode,reply,notes = MessageHandler.AskPlace(event,date)
     if sendmode==1:
         line_bot_api.reply_message(
                 event.reply_token,
+                TextSendMessage(text=date))
+        line_bot_api.reply_message(
+                event.reply_token, 
                 TextSendMessage(text=reply))
-    # line_bot_api.reply_message(event.reply_token, messages=messages)
 
 @handler.add(MessageEvent,message=ImageMessage)
 def handle_image(event):
