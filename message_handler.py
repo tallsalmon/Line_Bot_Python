@@ -178,7 +178,7 @@ class MessageHandler:
         #text='A'
         return send_mode[id],text,notes
 
-    def maketotes(status):
+    def makenotes(status):
         if status==6:
             notes=[
                 '尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。',
