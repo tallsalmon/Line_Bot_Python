@@ -82,7 +82,7 @@ def handle_message(event):
 
 @handler.add(PostbackEvent)
 def on_postback(event):
-    date = event.postback.params['datetime']
+    date = str(event.postback.params['datetime'])
     date.replace('T','日')
     date+='時'
     sendmode,reply,notes = MessageHandler.AskPlace(event,date)
