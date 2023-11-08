@@ -88,7 +88,7 @@ def on_postback(event):
         line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(text=reply))
-    line_bot_api.reply_message(event.reply_token, messages=messages)
+    # line_bot_api.reply_message(event.reply_token, messages=messages)
 
 @handler.add(MessageEvent,message=ImageMessage)
 def handle_image(event):
