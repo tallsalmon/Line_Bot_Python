@@ -62,10 +62,10 @@ def handle_message(event):
                 text=notes[0],
                 title=notes[1],
                 image_size="cover",
-                thumbnail_image_url=notes[2],
+                # thumbnail_image_url=notes[2],
                 actions=[
                     DatetimepickerAction(
-                        type='message',
+                        type='datetimepicker',
                         label=notes[3],
                         text=notes[3]
                     )
