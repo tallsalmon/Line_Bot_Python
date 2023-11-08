@@ -83,7 +83,7 @@ def handle_message(event):
 @handler.add(PostbackEvent)
 def on_postback(event):
     date = event.postback.params['ActionData']
-    sendmode,reply,notes = MessageHandler.AskPlace(event)
+    sendmode,reply,notes = MessageHandler.AskPlace(event,date)
     if sendmode==1:
         line_bot_api.reply_message(
                 event.reply_token,
