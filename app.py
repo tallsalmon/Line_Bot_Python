@@ -12,7 +12,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
     ImageMessage,ImageSendMessage,TemplateSendMessage,
     ButtonsTemplate,MessageAction,DatetimePickerAction,
-    PostbackEvent
+    PostbackEvent,URIAction
 )
 
 from message_handler import MessageHandler
@@ -41,6 +41,10 @@ def handle_message(event):
                 title=notes[1],
                 image_size="cover",
                 thumbnail_image_url=notes[2],
+                defaultAction=URIAction(
+                    type='uri',
+                    uri=notes[2]
+                ),
                 actions=[
                     MessageAction(
                         type='message',
