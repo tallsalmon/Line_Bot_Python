@@ -56,6 +56,23 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, messages=messages)
     elif sendmode==3:
+        messages = TemplateSendMessage(
+            alt_text='template',
+            template=ButtonsTemplate(
+                text=notes[0],
+                title=notes[1],
+                image_size="cover",
+                thumbnail_image_url=notes[2],
+                actions=[
+                    DatetimepickerAction(
+                        type='message',
+                        label=notes[3],
+                        text=notes[3]
+                    )
+                ]
+            ),
+        )
+        line_bot_api.reply_message(event.reply_token, messages=messages)
     # line_bot_api.reply_message(
     #         event.reply_token,
     #         TextSendMessage(text=reply))
