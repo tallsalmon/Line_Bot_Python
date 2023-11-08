@@ -66,8 +66,8 @@ def handle_message(event):
                 actions=[
                     DatetimepickerAction(
                         type='datetimepicker',
-                        label=notes[3],
-                        text=notes[3]
+                        label=notes[2],
+                        text=notes[2]
                     )
                 ]
             ),
