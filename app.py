@@ -11,7 +11,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
     ImageMessage,ImageSendMessage,TemplateSendMessage,
-    ButtonsTemplate,MessageAction,DatetimepickerAction
+    ButtonsTemplate,MessageAction,DatetimepickAction
 )
 
 from message_handler import MessageHandler
@@ -64,7 +64,7 @@ def handle_message(event):
                 image_size="cover",
                 # thumbnail_image_url=notes[2],
                 actions=[
-                    DatetimepickerAction(
+                    DatetimepickAction(
                         type='datetimepicker',
                         label=notes[2],
                         text=notes[2]
