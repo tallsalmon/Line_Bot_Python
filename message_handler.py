@@ -66,6 +66,11 @@ class MessageHandler:
         r=source.rfind('"')
         l=source.rfind('"',0,r-1)
         id=source[l+1:r]
+        l=source.find('"')
+        l=source.find('"',l+1)
+        l=source.find('"',l+1)
+        r=source.find('"',l+1)
+        type=source[l+1:r]
         notes=[]
         text=str(id)
         if type=='user':
