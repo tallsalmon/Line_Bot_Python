@@ -70,7 +70,7 @@ def handle_message(event):
                         label=notes[2],
                         text=notes[2],
                         mode='datetime',
-                        data=ActionData
+                        data='ActionData'
                     )
                 ]
             ),
@@ -82,6 +82,7 @@ def handle_message(event):
 
 @handler.add(PostbackEvent)
 def on_postback(event):
+    date = event.postback.params['ActionData']
     sendmode,reply,notes = MessageHandler.reply(event)
     if sendmode==1:
         line_bot_api.reply_message(
