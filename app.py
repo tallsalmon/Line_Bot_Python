@@ -80,6 +80,11 @@ def handle_message(event):
             ),
         )
         line_bot_api.reply_message(event.reply_token, messages=messages)
+    elif sendmode==4:
+        line_bot_api.reply_message(
+                event.reply_token,
+                [TextSendMessage(text=notes[0]), TextSendMessage(text=notes[1])]
+        )
     # line_bot_api.reply_message(
     #         event.reply_token,
     #         TextSendMessage(text=reply))
