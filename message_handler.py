@@ -129,16 +129,13 @@ class MessageHandler:
                 send_mode[id]=1
 
             if user_status[id]==0:
-                text='こんにちは。本日はイタチ判別にご協力いただき誠にありがとうございます。これからいくつか質問をさせていただきますので、できるだけ正確にお答えしていただけるようよろしくお願いいたします。'
+                notes=['こんにちは。本日はイタチ判別にご協力いただき誠にありがとうございます。これからいくつか質問をさせていただきますので、できるだけ正確にお答えしていただけるようよろしくお願いいたします。']
                 user_status[id]=1
                 user_answer[id]=[]
                 itachi_point[id]=0
-                send_mode[id]=1
-
-            elif user_status[id]==1:
-                text='まずは捕獲した記録を残したいので、以下の３つの質問に答えてください。'
+                notes.append('まずは捕獲した記録を残したいので、以下の３つの質問に答えてください。')
                 user_status[id]=2
-                send_mode[id]=1
+                send_mode[id]=4
 
             elif user_status[id]==2:
                 text='捕獲した日時はいつですか?'
