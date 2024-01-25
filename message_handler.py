@@ -216,7 +216,7 @@ class MessageHandler:
                 user_status[id]=10
                 
             elif user_status[id]==10:
-                text='これで質問は終わりです。イタチ判別にご協力いただきありがとうございました。'
+                text='これで質問は終わりです。イタチ判別にご協力いただきありがとうございました。ほかの個体を送信する場合はもう一度「イタチ」と送信してください。'
                 user_status[id]=0
                 send_mode[id]=1
                 # text+=str(user_status[id])
