@@ -81,10 +81,20 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, messages=messages)
     elif sendmode==4:
-        line_bot_api.reply_message(
-                event.reply_token,
-                [TextSendMessage(text=notes[0]), TextSendMessage(text=notes[1])]
+        messages = TemplateSendMessage(
+            alt_text='template',
+            template=ButtonsTemplate(
+                text=notes[0],
+                actions=[
+                    MessageAction(
+                        type='message',
+                        label=notes[2],
+                        text=notes[2]
+                    )
+                ]
+            ),
         )
+        line_bot_api.reply_message(event.reply_token, messages=messages)
     # line_bot_api.reply_message(
     #         event.reply_token,
     #         TextSendMessage(text=reply))
