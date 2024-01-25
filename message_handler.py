@@ -1,5 +1,7 @@
 import json
 
+import datetime
+
 import os
 import dropbox
 from linebot import (
@@ -21,7 +23,7 @@ client = dropbox.Dropbox(app_key='ng3r13wmw0k35g9',app_secret='abnb48hn78crx6p',
 send_num=[0]
 
 user_status={}
-user_answer={}#{userid:[date,place,name,talerate(尾率 はいorいいえ),whitepoint(白斑 はいorいいえ),colordif(毛色の違い はいorいいえ)]}
+user_answer={}#{userid:[date,place,name,talerate(尾率 はいorいいえ),whitepoint(白斑 はいorいいえ),colordif(毛色の違い はいorいいえ),result,id,dropbox画像ファイルパス]}
 itachi_point={}#二ホンイタチの特徴に当てはまる場合+1,シベリアイタチの特徴に当てはまる場合+0　合計が2以上で二ホンイタチ
 user_image={}#写真を上げてくれた枚数（イタチの画像の名前に使用）
 send_mode={}#ユーザーに送るメッセージの種類を決定（1のときテキストメッセージ、2のときテンプレートメッセージ）
@@ -164,6 +166,7 @@ class MessageHandler:
                 user_status[id]=6
                 user_answer[id].append(receivedEvent.message.text)#名前
                 send_mode[id]=4
+                
 
             elif user_status[id]==6:
                 text='まず、尾率が５０％以上かどうか教えて下さい。尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。'
@@ -218,12 +221,15 @@ class MessageHandler:
                 text='ありがとうございます。判定結果は「'+result+'」でした。今後、この判別方式が有効かどうかを検証するために、今回捕獲されたイタチの写真提供にご協力いただけないでしょうか。全身の写真、顔のアップの写真を提供いただけるとありがたいです。（写真は何枚でも送信できます）写真の送信が完了しましたら「完了」と送信してください。'
                 user_status[id]=10
                 
+                dt_now = str(datetime.datetime.now())
+                DROPBOX_REFRESH_TOKEN.files_create_folder('fujishima_image/'+dt_now+str(user_answer[id][2]))
+                user_answer[id].append('fujishima_image/'+dt_now+str(user_answer[id][2]))
+                
             elif user_status[id]==10:
                 text='これで質問は終わりです。イタチ判別にご協力いただきありがとうございました。ほかの個体を送信する場合はもう一度「イタチ」と送信してください。'
                 user_status[id]=0
                 send_mode[id]=1
                 # text+=str(user_status[id])
-
                 f = open(id+'.txt', 'w')
                 f.write(str(user_answer[id]))
                 f.close()
