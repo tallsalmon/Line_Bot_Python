@@ -222,7 +222,7 @@ class MessageHandler:
                 user_status[id]=10
                 
                 dt_now = str(datetime.datetime.now())
-                DROPBOX_REFRESH_TOKEN.files_create_folder('fujishima_image/'+dt_now+str(user_answer[id][2]))
+                client.files_create_folder('fujishima_image/'+dt_now+str(user_answer[id][2]))
                 user_answer[id].append('fujishima_image/'+dt_now+str(user_answer[id][2]))
                 
             elif user_status[id]==10:
