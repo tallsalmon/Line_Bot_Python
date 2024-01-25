@@ -158,9 +158,12 @@ class MessageHandler:
 
             elif user_status[id]==5:
                 text='次に捕獲したイタチの状態について以下の３つの質問に答えてください。'
+                notes=['次に捕獲したイタチの状態について以下の３つの質問に答えてください。',
+                      '',
+                      '質問を表示']
                 user_status[id]=6
                 user_answer[id].append(receivedEvent.message.text)#名前
-                send_mode[id]=1
+                send_mode[id]=4
 
             elif user_status[id]==6:
                 text='まず、尾率が５０％以上かどうか教えて下さい。尾率は尾長（尻尾の長さ）を頭胴長（頭から尻尾の付け根までの長さ）で割ると求めることができます。'
