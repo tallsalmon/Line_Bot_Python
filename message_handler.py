@@ -222,8 +222,8 @@ class MessageHandler:
                 user_status[id]=10
                 
                 dt_now = str(datetime.datetime.now())
-                client.files_create_folder('fujishima_image/'+dt_now+str(user_answer[id][2]))
-                user_answer[id].append('fujishima_image/'+dt_now+str(user_answer[id][2]))
+                # client.files_create_folder('fujishima_image/'+dt_now+str(user_answer[id][2]))
+                # user_answer[id].append('fujishima_image/'+dt_now+str(user_answer[id][2]))
                 
             elif user_status[id]==10:
                 text='これで質問は終わりです。イタチ判別にご協力いただきありがとうございました。ほかの個体を送信する場合はもう一度「イタチ」と送信してください。'
