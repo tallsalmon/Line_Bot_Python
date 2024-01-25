@@ -255,13 +255,14 @@ class MessageHandler:
         r=source.rfind('"')
         l=source.rfind('"',0,r-1)
         id=source[l+1:r]
+
+        if len(user_answer[id])<9:
+            return
+        
         if id not in user_image:
             user_image[id]=0
         user_image[id]+=1
-        if id in user_answer and len(user_answer[id])>=3:
-            filename=user_answer[id][2]+str(user_image[id])
-        else:
-            filename=str(id)+'さん'+str(user_image[id])
+        filename=user_answer[id][2]+str(user_image[id])
 
         message_id=receivedEvent.message.id
         content = line_bot_api.get_message_content(message_id)
