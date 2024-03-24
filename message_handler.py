@@ -256,8 +256,8 @@ class MessageHandler:
         l=source.rfind('"',0,r-1)
         id=source[l+1:r]
 
-        if len(user_answer[id])<9:
-            return
+        # if len(user_answer[id])<9:
+        #     return
         
         if id not in user_image:
             user_image[id]=0
